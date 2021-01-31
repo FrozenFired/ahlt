@@ -1,0 +1,25 @@
+table.table.table-hover.table-bordered
+	thead
+		tr
+			th(style="width:8%") 序号
+			th(style="width:8%") 级别
+			th(style="width:20%") 名字
+			th(style="width:20%") 海报
+			th(style="width:12%") 子导航
+			th(style="width:12%") 权重
+			th(style="width:12%") 上下架
+	tbody
+		each sub in navdb.subs
+			- nb++;
+			tr(class="sub-id-"+sub._id)
+				td #{nb}
+				td #{sub.level}
+				td: a(href="/adNavdb/"+sub._id, title=sub.desp)
+					- let cn = 'cn'
+					if sub.cn
+						-cn = sub.cn;
+					span #{cn}
+				td: img.js-click-imgEnlarge(src=sub.photo, width="100px" data-info=sub.cn)
+				td #{sub.subs.length}
+				td #{sub.weight}
+				td #{sub.shelf}

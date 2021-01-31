@@ -1,0 +1,26 @@
+form#jsForm-adObjectNew(method="post", action="/adNavdbNew", style="display:none")
+	- let weight = 9;
+	if navdb
+		- weight = weight - navdb.subs.length;
+		input#supIpt.form-control(type="hidden", name="obj[sup]", value=navdb._id)
+	else
+		p 这是一级导航栏：
+	.form-group.row
+		label.col-4.col-sm-2.col-form-label(for="cnIpt") 名称
+		.col-8.col-sm-6
+			input#cnIpt.form-control(type="text", name="obj[cn]")
+	.form-group.row
+		label.col-4.col-sm-2.col-form-label(for="photoIpt") 海报
+		.col-8.col-sm-6
+			input#photoIpt.form-control(type="text", name="obj[photo]")
+	.form-group.row
+		label.col-4.col-sm-2.col-form-label(for="weightIpt") 权重
+		.col-8.col-sm-6
+			input#weightIpt.form-control(type="number", name="obj[weight]", value=weight)
+	.form-group.row
+		label.col-4.col-sm-2.col-form-label(for="shelfIpt") 上下架
+		.col-8.col-sm-6
+			input#shelfIpt.form-control(type="number", name="obj[shelf]", value=1)
+	.form-group.row
+		.offset-sm-6.col-sm-2
+			input.btn.btn-success.btn-block(type="submit" value="添加")

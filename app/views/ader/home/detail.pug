@@ -1,0 +1,72 @@
+extends ../aalayout/layout
+
+block content
+	.container.mt-3
+		nav(aria-label="breadcrumb")
+			ol.breadcrumb
+				li.breadcrumb-item: a(href="/ader") Home
+				li.breadcrumb-item.active(aria-current="page") 前台首页设置
+
+		#jsPageFiexd-obj.mt-5
+			- object=home; getUrl="/adHomeUpdAjax";
+			.row
+				.col-md-4.border.border-right-0
+					.mt-3
+						- type="color"; field = "titleColor"; fieldDesp="标题的字体颜色(Ex:FFFFFF)";
+						include ../aaPlugin/ajaxInputUpd
+
+					.mt-3
+						- type="Int"; field = "nomeSize"; fieldDesp="名字前后字体大小(Ex:60[px])";
+						include ../aaPlugin/ajaxInputUpd
+					.mt-3
+						- type="Int"; field = "firmSize"; fieldDesp="名字字体大小(Ex:75[px])";
+						include ../aaPlugin/ajaxInputUpd
+
+					.mt-3
+						- type="String"; field = "preNome"; fieldDesp="名字之前";
+						include ../aaPlugin/ajaxInputUpd
+
+					.mt-3
+						- type="String"; field = "firmNome"; fieldDesp="公司名字";
+						include ../aaPlugin/ajaxInputUpd
+
+					.mt-3
+						- type="String"; field = "afterNome"; fieldDesp="名字之后";
+						include ../aaPlugin/ajaxInputUpd
+
+				.col-md-4.border.border-left-0
+					h3.mt-3 基本信息
+					.mt-3
+						- type="Int"; field = "titleSize"; fieldDesp="标题字体大小(Ex:28[px])";
+						include ../aaPlugin/ajaxInputUpd
+					.mt-3
+						- type="String"; field = "title1"; fieldDesp="标题1";
+						include ../aaPlugin/ajaxInputUpd
+					.mt-3
+						- type="String"; field = "title2"; fieldDesp="标题2";
+						include ../aaPlugin/ajaxInputUpd
+					.mt-3
+						- type="String"; field = "title3"; fieldDesp="标题3";
+						include ../aaPlugin/ajaxInputUpd
+
+				.col-md-4.text-center.border
+					h5.mt-3 背景视频 文件必须是.mp4格式
+					.mt-3
+						- type="video"; field = "bgMovie"; fieldDesp="影片";
+						include ../aaPlugin/ajaxInputUpd
+					.bgMovie
+						if home.bgMovie
+							-a;
+							video(width="320" height="240" controls)
+								source(src=home.bgMovie, type="video/mp4")
+							.jsChangeVideoDiv.text-info(id="jsChangeVideoDiv-bgMovie-"+home._id) [点击 上传]
+							form.jsFileForm(id="jsFileForm-bgMovie-"+home._id, method="post", action="/adHomeUpdFile", enctype="multipart/form-data", style="display:none")
+								input(type="hidden", name="obj[_id]", value=home._id)
+								input(type="hidden", name="obj[orgFile]", value=home.bgMovie)
+								input(type="hidden", name="key", value="bgMovie")
+								input(type="hidden", name="fileDir", value="/videos/")
+								input(type="hidden", name="suffixs", value="mp4")
+								input.jsFileIpt.btn.btn-info.btn-block(id="jsFileIpt-bgMovie-"+home._id, type="file", name="fileUpload")
+								.form-group.text-right.mt-3
+									button.border.border-danger.mr-4.btn.btn-default.text-danger.jsVideoCancel(data-objid=home._id, data-field="bgMovie" type="button") 取消
+									input.btn.btn-success(type="submit", value="确认保存")

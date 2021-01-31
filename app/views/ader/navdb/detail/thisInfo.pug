@@ -1,0 +1,151 @@
+- object=navdb; 
+- getUrl="/adNavdbUpdAjax"; 
+- postUrl="/adNavdbUpdFile";
+
+.row
+	.col-md-4.border
+		h3.mt-3.text-center 基本信息
+		.mt-3.text-secondary 层级: #{navdb.level}
+
+		.mt-3
+			- type="String"; field = "cn"; fieldDesp="名称";
+			include ../../aaPlugin/ajaxInputUpd
+		
+		.mt-3
+			- type="Int"; field = "weight"; fieldDesp="权重";
+			include ../../aaPlugin/ajaxInputUpd
+
+		.mt-3
+			- type="Int"; field = "shelf"; fieldDesp="上下架";
+			include ../../aaPlugin/ajaxInputUpd
+
+	.col-md-4.text-center.border
+		h5.mt-3 海报图片 文件必须是.jpg .png 或者 .gif
+
+		//- 注意 此处用到了 hmtl 的 id 在做小屏幕优化时要小心
+		.mt-3
+			- type="img"; field = "photo"; fieldDesp="海报";
+			include ../../aaPlugin/ajaxInputUpd
+		.picUpload.mt-3
+			- field = "photo";
+			include ../../aaPlugin/uploadPic
+
+	.col-md-4.text-center.border
+		h5.mt-3 背景视频 文件必须是.mp4格式
+		.mt-3
+			- type="video"; field = "bgMovie"; fieldDesp="影片";
+			include ../../aaPlugin/ajaxInputUpd
+		.bgMovie
+			include ../../aaPlugin/uploadVideo
+.row
+	.col-md-3.border
+		h3.mt-3.text-center 标题信息
+		.mt-3
+			- type="String"; field = "headerFir"; fieldDesp="主标题一";
+			include ../../aaPlugin/ajaxInputUpd
+		.mt-3
+			- type="String"; field = "headerSec"; fieldDesp="主标题二";
+			include ../../aaPlugin/ajaxInputUpd
+
+		.mt-3
+			- type="color"; field = "headerColor"; fieldDesp="标题的字体颜色";
+			include ../../aaPlugin/ajaxInputUpd
+
+	.col-md-6.border
+		h3.mt-3.text-center 描述信息
+		.mt-3
+			- field = "despTitle"; fieldDesp="简要描述";
+			include ../../aaPlugin/ajaxTextareaUpd
+
+		.mt-3
+			- field = "despFir"; fieldDesp="第一段描述";
+			include ../../aaPlugin/ajaxTextareaUpd
+
+		.mt-3
+			- field = "despSec"; fieldDesp="第二段描述";
+			include ../../aaPlugin/ajaxTextareaUpd
+	.col-md-3.border
+		h3.mt-3.text-center 子模块显示控制
+		.mt-3
+			- type="Int"; field = "showSubsTbNum"; fieldDesp="显示子模块内容数量";
+			include ../../aaPlugin/ajaxInputUpd
+
+		.mt-3
+			- type="String"; field = "titleSubs"; fieldDesp="子目录标题";
+			include ../../aaPlugin/ajaxInputUpd
+
+		.mt-3
+			- type="color"; field = "bgSubsTableColor"; fieldDesp= "子目录背景色";
+			include ../../aaPlugin/ajaxInputUpd
+
+		h3.mt-5 是否显示HLT支持
+		.mt-3
+			- type="Int"; field = "isShowSupport"; fieldDesp=" 显示(Ex:1为显示 其他为不显示)";
+			include ../../aaPlugin/ajaxInputUpd
+
+.row
+	.col-md-3.border
+		h3.mt-3.text-center HLT支持1
+		.mt-3
+			- type="img"; field = "photoSpt1"; fieldDesp="图片1";
+			include ../../aaPlugin/ajaxInputUpd
+		.picUpload.mt-3
+			- field = "photoSpt1";
+			include ../../aaPlugin/uploadPic
+
+		.mt-3
+			- type="String"; field = "titleSpt1"; fieldDesp="主题1";
+			include ../../aaPlugin/ajaxInputUpd
+
+		.mt-3
+			- field = "despSpt1"; fieldDesp="描述1";
+			include ../../aaPlugin/ajaxTextareaUpd
+	.col-md-3.border
+		h3.mt-3.text-center HLT支持2
+		.mt-3
+			- type="img"; field = "photoSpt2"; fieldDesp="图片2";
+			include ../../aaPlugin/ajaxInputUpd
+		.picUpload.mt-3
+			- field = "photoSpt2";
+			include ../../aaPlugin/uploadPic
+
+		.mt-3
+			- type="String"; field = "titleSpt2"; fieldDesp="主题2";
+			include ../../aaPlugin/ajaxInputUpd
+
+		.mt-3
+			- field = "despSpt2"; fieldDesp="描述2";
+			include ../../aaPlugin/ajaxTextareaUpd
+	.col-md-3.border
+		h3.mt-3.text-center HLT支持3
+		.mt-3
+			- type="img"; field = "photoSpt3"; fieldDesp="图片3";
+			include ../../aaPlugin/ajaxInputUpd
+		.picUpload.mt-3
+			- field = "photoSpt3";
+			include ../../aaPlugin/uploadPic
+
+		.mt-3
+			- type="String"; field = "titleSpt3"; fieldDesp="主题3";
+			include ../../aaPlugin/ajaxInputUpd
+
+		.mt-3
+			- field = "despSpt3"; fieldDesp="描述3";
+			include ../../aaPlugin/ajaxTextareaUpd
+	.col-md-3.border
+		h3.mt-3.text-center HLT支持4
+		.mt-3
+			- type="img"; field = "photoSpt4"; fieldDesp="图片4";
+			include ../../aaPlugin/ajaxInputUpd
+		.picUpload.mt-3
+			- field = "photoSpt4";
+			include ../../aaPlugin/uploadPic
+
+		.mt-3
+			- type="String"; field = "titleSpt4"; fieldDesp="主题4";
+			include ../../aaPlugin/ajaxInputUpd
+
+		.mt-3
+			- field = "despSpt4"; fieldDesp="描述4";
+			include ../../aaPlugin/ajaxTextareaUpd
+div(style="height: 200px")

@@ -1,0 +1,31 @@
+extends ../aalayout/layout
+
+block content
+
+	.js-browserWidth-pc
+		- let pcVideo = "/media/videos/homeBgVideo.mp4";
+		if home.bgMovie
+			- pcVideo = home.bgMovie;
+		include ../aaElement/bgvideoBox
+
+		.container
+			.js-browserHeight-autoHeight
+			- let titleColor = "FFFFFF";
+			if home.titleColor
+				- titleColor = home.titleColor;
+			.homeTile(style="color: #"+titleColor+";")
+				h1.text-center
+					span.mr-2(style="font-size: "+home.nomeSize+"px;") #{home.preNome}
+					span.mr-2(style="font-size: "+home.firmSize+"px;") #{home.firmNome}
+					span(style="font-size: "+home.nomeSize+"px;") #{home.afterNome}
+				div(style="height: 100px")
+				.subTitle.text-center(style="font-size: "+home.titleSize+"px;")
+					.title1 #{home.title1}
+					.title2 #{home.title2}
+					.title3 #{home.title3}
+			//- div(style="height:800px")
+
+	.js-browserWidth-mb
+		.container
+			.js-browserHeight-autoHeight
+			h1.text-center(style="font-size: 70px;") Focus On

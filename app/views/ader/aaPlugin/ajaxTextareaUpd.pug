@@ -1,0 +1,4 @@
+.jsUpd-text(class="jsUpd-text-"+field, data-key=field) #{fieldDesp}:
+span.text-info.jsUpd-span(class="jsUpd-span-"+field, data-key=field) #{object[field]}
+input.form-control(class="jsUpd-org-"+field, type="hidden", value=object[field])
+textarea.jsUpd-ipt.form-control(class="jsUpd-ipt-"+field, style="display:none", type="text",  rows="3", data-type="String", data-id=object._id, data-url=getUrl, data-key=field, value=object[field])

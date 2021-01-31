@@ -1,0 +1,29 @@
+extends ../aalayout/layout
+
+block content
+	.container.mt-3
+		nav(aria-label="breadcrumb")
+			ol.breadcrumb
+				li.breadcrumb-item: a(href="/ader") Home
+				li.breadcrumb-item: a(href="/adNavdbs") 一级导航列表
+				if navdb.sup
+					- sup = navdb.sup;
+					li.breadcrumb-item: a(href="/adNavdb/"+sup._id) 上级导航详情
+				li.breadcrumb-item.active(aria-current="page") 导航详情
+
+		#jsOnFixed-addObject
+			.text-right
+				a.btn.btn-danger.mr-5(href="/adNavdbDel/"+navdb._id) 删
+				if navdb.level < 3
+					-a;
+					button.mr-3.btn.btn-warning#jsBtn-objectAdd(type="button") 新
+					button.mr-3.btn.btn-warning#jsBtn-fromAdd-back(type="button" style="display:none") 返回
+			include ./add
+
+		if navdb.subs && navdb.subs.length > 0
+			- let nb = 0;
+			#pageSubs.mt-5
+				include ./detail/subs
+
+		#jsPageFiexd-obj.mt-5
+			include ./detail/thisInfo

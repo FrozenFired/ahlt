@@ -1,0 +1,9 @@
+.bgvideoBox(style="text-align:center;")
+	.js-browserWidth-pc
+		video.css-bg-video(id="pcVideo" width="100%" style="margin-top:15px;" loop muted)
+			source(src=pcVideo type="video/mp4")
+	.js-browserWidth-mb
+		video.css-bg-video(id="mbVideo" width="100%" style="margin-top:15px;" loop muted)
+			source(src=mbVideo type="video/mp4")
+
+script(src="/js/video/bgVideo.js")

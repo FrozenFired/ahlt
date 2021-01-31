@@ -1,0 +1,47 @@
+if object.bgMovie
+	-a;
+	video(width="320" height="240" controls)
+		source(src=object.bgMovie, type="video/mp4")
+.jsChangeVideoDiv.text-info(id="jsChangeVideoDiv-bgMovie-"+object._id) [点击 上传]
+form.jsFileForm(id="jsFileForm-bgMovie-"+object._id, method="post", action="/adNavdbUpdFile", enctype="multipart/form-data", style="display:none")
+	input(type="hidden", name="obj[_id]", value=object._id)
+	input(type="hidden", name="obj[orgFile]", value=object.bgMovie)
+	input(type="hidden", name="key", value="bgMovie")
+	input(type="hidden", name="fileDir", value="/videos/")
+	input(type="hidden", name="suffixs", value="mp4")
+	input.jsFileIpt.btn.btn-info.btn-block(id="jsFileIpt-bgMovie-"+object._id, type="file", name="fileUpload")
+	.form-group.text-right.mt-3
+		button.border.border-danger.mr-4.btn.btn-default.text-danger.jsVideoCancel(data-objid=object._id, data-field="bgMovie" type="button") 取消
+		input.btn.btn-success(type="submit", value="确认保存")
+
+//- if navdb.bgMovie
+//- 	-a;
+//- 	video(width="320" height="240" controls)
+//- 		source(src=navdb.bgMovie, type="video/mp4")
+//- .jsChangeVideoDiv.text-info(id="jsChangeVideoDiv-bgMovie-"+navdb._id) [点击 上传]
+//- form.jsFileForm(id="jsFileForm-bgMovie-"+navdb._id, method="post", action="/adNavdbUpdFile", enctype="multipart/form-data", style="display:none")
+//- 	input(type="hidden", name="obj[_id]", value=navdb._id)
+//- 	input(type="hidden", name="obj[orgFile]", value=navdb.bgMovie)
+//- 	input(type="hidden", name="key", value="bgMovie")
+//- 	input(type="hidden", name="fileDir", value="/videos/")
+//- 	input(type="hidden", name="suffixs", value="mp4")
+//- 	input.jsFileIpt.btn.btn-info.btn-block(id="jsFileIpt-bgMovie-"+navdb._id, type="file", name="fileUpload")
+//- 	.form-group.text-right.mt-3
+//- 		button.border.border-danger.mr-4.btn.btn-default.text-danger.jsVideoCancel(data-objid=navdb._id, data-field="bgMovie" type="button") 取消
+//- 		input.btn.btn-success(type="submit", value="确认保存")
+
+//- if home.bgMovie
+//- 	-a;
+//- 	video(width="320" height="240" controls)
+//- 		source(src=home.bgMovie, type="video/mp4")
+//- .jsChangeVideoDiv.text-info(id="jsChangeVideoDiv-bgMovie-"+home._id) [点击 上传]
+//- form.jsFileForm(id="jsFileForm-bgMovie-"+home._id, method="post", action="/adHomeUpdFile", enctype="multipart/form-data", style="display:none")
+//- 	input(type="hidden", name="obj[_id]", value=home._id)
+//- 	input(type="hidden", name="obj[orgFile]", value=home.bgMovie)
+//- 	input(type="hidden", name="key", value="bgMovie")
+//- 	input(type="hidden", name="fileDir", value="/videos/")
+//- 	input(type="hidden", name="suffixs", value="mp4")
+//- 	input.jsFileIpt.btn.btn-info.btn-block(id="jsFileIpt-bgMovie-"+home._id, type="file", name="fileUpload")
+//- 	.form-group.text-right.mt-3
+//- 		button.border.border-danger.mr-4.btn.btn-default.text-danger.jsVideoCancel(data-objid=home._id, data-field="bgMovie" type="button") 取消
+//- 		input.btn.btn-success(type="submit", value="确认保存")

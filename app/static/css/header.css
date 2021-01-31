@@ -1,0 +1,28 @@
+.css-fixed-t0h80Fir {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+
+	/*padding: 0rem 0.5rem;*/
+	width: 100%;
+	height: 80px;
+	background-color: #000033;
+	/*opacity: 0.9;*/
+}
+.css-fixed-t80h600Sec {
+	position: fixed;
+	top: 80px;
+	right: 0px;
+
+	width: 100%;
+	height: 600px;
+	/*background-image: "/media/img/1.jpg";*/
+	background: #F3F3F3;
+	/*opacity: 0.8;*/
+}
+.css-coopHide-t80h600Sec{ 
+	width: 100%;
+	height: 50px;
+	background: #000000;
+	opacity: 0;
+}
