@@ -43,3 +43,11 @@ video.css-bg-video {
   border-right: 1px solid #C0C0C0 !important;
   border-bottom: 1px solid #C0C0C0 !important;
 }
+.css-text-sm {
+	font-size: 16px;
+	line-height: 30px;
+}
+.css-text-md {
+	font-size: 20px;
+	line-height: 35px;
+}

@@ -1,0 +1,36 @@
+extends ../aalayout/layout
+
+block content
+	.js-browserWidth-pc
+
+		include ./detail/headerBgMovie
+
+		.bg-white.border(style="min-height: 600px;")
+			div(style="height: 50px")
+
+			if navdb.despTitle
+				- a;
+				include ./detail/description
+
+			if subsTable && subsTable.length > 0
+				- bgSubsTableColor = "F0F0F0";
+				include ./detail/subs
+
+			if navdb.isShowSupport == 1
+				-a;
+				include ./detail/support
+			//- if navdb.isShowIntr == 1
+				-a; 
+				include ./detail/introduction
+			if navdb.cn == "商业领域"
+				-a;
+				include ./detail/industry
+		if navdb.cn == "商业领域"
+			-a;
+			.js-browserHeight-half
+	//- .js-browserWidth-mb
+		.container-fluid
+			h1 navdb Mobil
+
+	script(src="/js/index/navdb.js")
+

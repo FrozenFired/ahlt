@@ -15,6 +15,10 @@ $(() => {
 		$("#jsPageFiexd-obj").show();
 	})
 
+	$("#jsBtn-objectsToggle").click(function(e) {
+		$("#pageSubs").toggle();
+	})
+
 	/* ================================ 更新数据 ================================ */
 	$(".jsUpd-text").dblclick(function(e) {
 		const target = $(e.target);

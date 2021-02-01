@@ -1,0 +1,12 @@
+- let pcVideo = navdb.bgMovie;
+include ../../aaElement/bgvideoBox
+- let headerColor = "000000";
+if navdb.headerColor
+	- headerColor = navdb.headerColor;
+.js-browserHeight-half.px-5(style="color: #"+headerColor+";")
+	.js-browserHeight-quarter
+		div(style="height: 80px")
+		h1(style="font-size: 60px;") HLT
+	.mx-5
+		h1 #{navdb.headerFir}
+		h1.m-5 #{navdb.headerSec}

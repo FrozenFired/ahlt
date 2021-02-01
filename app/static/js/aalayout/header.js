@@ -6,8 +6,8 @@ const init = () => {
 
 $(function() {
 	init();
-	$(".navHome").mouseenter(function(e) {
-		$(".navSecBox").hide();
+	$(".jsPageFiexd-navFirm").mouseenter(function(e) {
+		$(".jsBox-navSec").hide();
 		$(".navFir").removeClass("css-bg-bluMid")
 	})
 	// 右侧导航栏 鼠标进入
@@ -51,23 +51,28 @@ $(function() {
 		$(this).addClass("css-bg-bluMid")
 
 		if(!navdbFir) {
-			$(".navSecBox").hide();
+			$(".jsBox-navSec").hide();
 		} else if(navdbFir.navdbSecs) {
-			$(".navSecBox").show();
+			$(".jsBox-navSec").show();
 			$(".firSubs").hide();
 			$(".firSubs-"+navdbFir._id).show();
 		} else {
 			renderNavSec_Func(navdbFir)
 		}
 	})
+	$(".firsElem").on("click", ".navdbFirElem", function(e) {
+		const target = $(e.target);
+		const id = target.data("id");
+		location.href = "/navdb/"+id;
+	})
 	/* ====== 隐藏效果隐藏 =====*/
-	$(".navSecBox").on("mouseover", ".css-coopHide-t80h600Sec", function(e) {
-		$(".navSecBox").hide();
+	$(".jsBox-navSec").on("mouseover", ".css-coopHide-t80h600Sec", function(e) {
+		$(".jsBox-navSec").hide();
 		$(".navFir").removeClass("css-bg-bluMid")
 	})
 
 	/* ================== 鼠标进入二级导航栏按钮 =================*/
-	$(".navSecBox").on("mouseover", ".navSec", function(e) {
+	$(".jsBox-navSec").on("mouseover", ".jsHref-navSec", function(e) {
 		const target = $(e.target);
 		const firid = target.data('firid');
 		const id = target.data('id');
@@ -76,12 +81,12 @@ $(function() {
 		const navdbSec = arrGetNavdbSec_Func(firid, id)
 
 		// 二级导航栏的描述 因为BOX已经添加了 只需要填充就可以
-		if(navdbSec.desp) {
+		$(".navdbSecDesp").remove();
+		if(navdbSec.despTitle) {
 			let elem = '<div class="navdbSecDesp">'
 				elem += '<span class="text-info">'+navdbSec.cn+'</span> : '
-				elem += navdbSec.desp
+				elem += navdbSec.despTitle
 			elem +='</div>'
-			$(".navdbSecDesp").remove();
 			$(".navdbSecDespBox-"+firid).append(elem)
 		}
 
@@ -101,7 +106,7 @@ $(function() {
 	})
 
 	/* ====== 鼠标进入三级导航栏 三级导航按钮变色 =====*/
-	$(".navSecBox").on("mouseover", ".navThd", function(e) {
+	$(".jsBox-navSec").on("mouseover", ".navThd", function(e) {
 		const target = $(e.target);
 		const id = target.data('id');
 		$(".navThdLinkBox").removeClass("css-bg-bluLight")
@@ -123,7 +128,7 @@ const renderNavSec_Func = async(navdbFir) => {
 					for(let secNb=0; secNb<navdbSecs.length; secNb++) {
 						const navdbSec = navdbSecs[secNb];
 						elem += '<div class="rounded p-2 navSecCnBox navSecCnBox-'+navdbSec._id+'">'
-							elem += '<a class="navSec text-dark" href="/navdb/'+navdbSec._id+'" data-firid='+navdbFir._id+' data-id='+navdbSec._id+'>'+navdbSec.cn+'</a>';
+							elem += '<a class="jsHref-navSec text-dark" href="/navdb/'+navdbSec._id+'" data-firid='+navdbFir._id+' data-id='+navdbSec._id+'>'+navdbSec.cn+'</a>';
 						elem += '</div>'
 					}
 				elem += '</div>'
@@ -152,8 +157,8 @@ const renderNavSec_Func = async(navdbFir) => {
 		elem += '</div>';
 
 		$(".firSubs-"+navdbFir._id).remove();	// 防止系统出错, 即便系统出错, 最多只是再写一次, 不会重复加载同样的面板
-		$(".navSecBox").append(elem);		// 在二导航面板下添加新的二级目录面板
-		$(".navSecBox").show();				// 显示二级导航
+		$(".jsBox-navSec").append(elem);		// 在二导航面板下添加新的二级目录面板
+		$(".jsBox-navSec").show();				// 显示二级导航
 
 		$(".firSubs").hide();				// 隐藏其他 一级导航下的二级面板
 		$(".firSubs-"+navdbFir._id).show();	// 只显示本次所触发的一级导航下的二级面板
@@ -192,11 +197,11 @@ const renderNavFirs_Func = async() => {
 		for(let firNb=0; firNb<navdbFirs.length; firNb++) {
 			if(firNb == 4) break;
 			const navdbFir = navdbFirs[firNb];
-			elem += '<div class="col-3 rounded navFir firElem" data-id='+navdbFir._id+'>';
+			elem += '<div class="col-3 rounded navFir navdbFirElem" data-id='+navdbFir._id+'>';
 				elem += '<a class="text-white" href="/navdb/'+navdbFir._id+'">'+navdbFir.cn+'</a>';
 			elem += '</div>';
 		}
-		$(".firElem").remove();
+		$(".navdbFirElem").remove();	// 防止右边导航栏消失
 		$(".firsElem").append(elem)
 	} catch(error) {
 		console.log(error);

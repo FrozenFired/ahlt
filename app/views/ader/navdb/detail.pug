@@ -16,13 +16,14 @@ block content
 				a.btn.btn-danger.mr-5(href="/adNavdbDel/"+navdb._id) 删
 				if navdb.level < 3
 					-a;
+					button.mr-3.btn.btn-info#jsBtn-objectsToggle(type="button") 子模块
 					button.mr-3.btn.btn-warning#jsBtn-objectAdd(type="button") 新
 					button.mr-3.btn.btn-warning#jsBtn-fromAdd-back(type="button" style="display:none") 返回
 			include ./add
 
 		if navdb.subs && navdb.subs.length > 0
 			- let nb = 0;
-			#pageSubs.mt-5
+			#pageSubs.mt-5(style="display:none")
 				include ./detail/subs
 
 		#jsPageFiexd-obj.mt-5

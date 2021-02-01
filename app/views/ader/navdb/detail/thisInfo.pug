@@ -78,9 +78,12 @@
 			- type="color"; field = "bgSubsTableColor"; fieldDesp= "子目录背景色";
 			include ../../aaPlugin/ajaxInputUpd
 
-		h3.mt-5 是否显示HLT支持
+		h4.mt-5 支持信息
 		.mt-3
-			- type="Int"; field = "isShowSupport"; fieldDesp=" 显示(Ex:1为显示 其他为不显示)";
+			- type="Int"; field = "isShowSupport"; fieldDesp=" 显示(1为显示 其他为不显示)";
+			include ../../aaPlugin/ajaxInputUpd
+		.mt-3
+			- type="String"; field = "supportTitle"; fieldDesp="支持标题";
 			include ../../aaPlugin/ajaxInputUpd
 
 .row
@@ -147,5 +150,40 @@
 
 		.mt-3
 			- field = "despSpt4"; fieldDesp="描述4";
+			include ../../aaPlugin/ajaxTextareaUpd
+//- .row
+	.col-md-4.border
+		h3.mt-3.text-center 介绍描述
+		.mt-3
+			- type="Int"; field = "isShowIntr"; fieldDesp="是否显示介绍";
+			include ../../aaPlugin/ajaxInputUpd
+		.mt-3
+			- type="String"; field = "intr"; fieldDesp="介绍主题";
+			include ../../aaPlugin/ajaxInputUpd
+	.col-md-4.border
+		.mt-4
+			- type="String"; field = "intrtitle1"; fieldDesp="介绍标题1";
+			include ../../aaPlugin/ajaxInputUpd
+		.mt-2
+			- field = "intrdesp1"; fieldDesp="介绍描述1";
+			include ../../aaPlugin/ajaxTextareaUpd
+		.mt-4
+			- type="String"; field = "intrtitle2"; fieldDesp="介绍标题2";
+			include ../../aaPlugin/ajaxInputUpd
+		.mt-2
+			- field = "intrdesp2"; fieldDesp="介绍描述2";
+			include ../../aaPlugin/ajaxTextareaUpd
+	.col-md-4.border
+		.mt-4
+			- type="String"; field = "intrtitle3"; fieldDesp="介绍标题3";
+			include ../../aaPlugin/ajaxInputUpd
+		.mt-2
+			- field = "intrdesp3"; fieldDesp="介绍描述3";
+			include ../../aaPlugin/ajaxTextareaUpd
+		.mt-4
+			- type="String"; field = "intrtitle4"; fieldDesp="介绍标题4";
+			include ../../aaPlugin/ajaxInputUpd
+		.mt-2
+			- field = "intrdesp4"; fieldDesp="介绍描述4";
 			include ../../aaPlugin/ajaxTextareaUpd
 div(style="height: 200px")

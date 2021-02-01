@@ -1,0 +1,28 @@
+if navdb.bgSubsTableColor
+	- bgSubsTableColor = navdb.bgSubsTableColor;
+div(style="height: 50px")
+.container
+	h2 #{navdb.titleSubs} &rarr;
+
+	table.table.table-bordered(style="background-color: #"+bgSubsTableColor+";")
+		- let iRow = 0;
+		each subsTr in subsTable
+			- iRow++;
+			- let borderBottom = "css-border-b";
+			if iRow == subsTable.length
+				- borderBottom = "";
+
+			tr(style="height: 200px")
+				- let iCol = 0;
+				each sub in subsTr
+					- iCol++;
+					- let borderRight = "css-border-r";
+					if iCol == 3
+						- borderRight = "";
+
+					td(class=borderBottom+" td-js-card "+borderRight style="width: 33.33%")
+						.rounded.py-1.mb-5
+							h3 #{sub.cn}
+						img.css-img-neat(src=sub.photo, width="15%" height="80px")
+div(style="height: 50px")
+hr

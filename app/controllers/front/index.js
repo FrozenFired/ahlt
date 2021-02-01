@@ -7,7 +7,7 @@ exports.home = async(req, res) => {
 	try{
 		const home = await Home.findOne();
 		if(!home) return res.render("/error?info=请联系管理员,公司主页出现问题");
-		return res.render('./index/home', {title: 'Holartec', home});
+		return res.render('./front/index/home', {title: 'Holartec', home, node_layout_footer: 1});
 	} catch(error) {
 		return res.redirect('/error?info=adNavdbs,Error&error='+error)
 	}
@@ -15,7 +15,7 @@ exports.home = async(req, res) => {
 
 exports.firm = async(req, res) => {
 	try{
-		return res.render('./index/firm', {title: 'Holartec' });
+		return res.render('./front/firm/detail', {title: 'Holartec' });
 	} catch(error) {
 		return res.redirect('/error?info=adNavdbs,Error&error='+error)
 	}
@@ -26,7 +26,7 @@ exports.navdb = async(req, res) => {
 		const id = req.params.id;
 		const navdb = await Navdb.findOne({"_id": id})
 		.populate("sup", "cn")
-		.populate("subs", "cn photo")
+		.populate({path: "subs", select: "cn photo", options: {sort: {weight: -1}}})
 		let subsTable = [];
 		if(navdb.showSubsTbNum > 0 && navdb.subs && navdb.subs.length > 0) {
 			const subs = navdb.subs;
@@ -43,7 +43,7 @@ exports.navdb = async(req, res) => {
 			}
 			// console.log(subsTable)
 		}
-		return res.render('./index/navdb', {title: 'Holartec', navdb, subsTable});
+		return res.render('./front/navdb/detail', {title: 'Holartec', navdb, subsTable});
 	} catch(error) {
 		return res.redirect('/error?info=navdb,Error&error='+error)
 	}
