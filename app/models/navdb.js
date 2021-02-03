@@ -25,7 +25,9 @@ const dbSchema = new Schema({
 	// 如果level为 2或3 
 	subs: [{type: ObjectId, ref: 'Navdb'}],
 	showSubsTbNum: Number,			// 是否显示 子模块内容 以此数字为限制
+	subsCol: Number,				// 横排显示的子模块数量
 	titleSubs: String,				// 显示 子模块的话写一个标题
+	subsFontColor: String,		// 该产品页面下 子模块的table背景颜色
 	bgSubsTableColor: String,		// 该产品页面下 子模块的table背景颜色
 
 	isShowSupport: Number,

@@ -4,6 +4,7 @@ div(style="height: 50px")
 .container
 	h2 #{navdb.titleSubs} &rarr;
 
+	- let widthTd = parseFloat(100/navdb.subsCol) + "%";
 	table.table.table-bordered(style="background-color: #"+bgSubsTableColor+";")
 		- let iRow = 0;
 		each subsTr in subsTable
@@ -17,12 +18,14 @@ div(style="height: 50px")
 				each sub in subsTr
 					- iCol++;
 					- let borderRight = "css-border-r";
-					if iCol == 3
+					if iCol == navdb.subsCol
 						- borderRight = "";
 
-					td(class=borderBottom+" td-js-card "+borderRight style="width: 33.33%")
-						.rounded.py-1.mb-5
-							h3 #{sub.cn}
-						img.css-img-neat(src=sub.photo, width="15%" height="80px")
+					td(class=borderBottom+" td-js-card "+borderRight style="width: "+widthTd)
+						if sub.cn
+							-a;
+							.rounded.py-1.mb-5
+								h3(style="color: #"+navdb.subsFontColor) #{sub.cn}
+							img.css-img-neat(src=sub.photo, width="15%" height="80px")
 div(style="height: 50px")
 hr
