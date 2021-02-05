@@ -7,6 +7,7 @@ module.exports = function(app){
 	app.get('/firm', Index.firm);
 	app.get('/internet', Index.internet);
 	app.get('/invest', Index.invest);
+	app.get('/together', Index.together);
 
 	app.get('/error', (req, res) => {
 		const info = req.query.info; const error = req.query.error;

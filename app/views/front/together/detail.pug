@@ -1,0 +1,38 @@
+extends ../aalayout/layout
+
+block content
+	.js-browserWidth-pc
+		//- - let pcVideo = "/media/videos/bg1.mp4";
+		//- include ../aaElement/bgvideoBox
+		img(src="/media/img/together1.jpg", width="100%")
+		.mr-5
+			.container-fluid
+				.row(style="background-color: #F0F8FF")
+					.col-8
+						img(src="/media/img/together2.jpg", width="100%")
+					.col-4.text-center
+						div(style="height: 100px;")
+						h1.my-5 做擅长的事才能成功
+						h3 欢迎加入我们，共同创造一个数字体验的未来
+			.container
+				h3.mt-5 以人为本
+				p 我们使人们（包括我们自己）的工作变得更好。从可以帮助我们做到最好的工作环境，到可以鼓励员工保持健康，快乐，敬业和成长的福利和文化，我们始终以员工为中心。
+
+		div(style="height: 100px")
+		.css-roundedTopLeft-5.ml-5(style="background-color: #FFEBCD; height: 850px")
+			.container.p-5.text-center
+				h1 你的热情在哪里？
+				.row.mt-5.border.text-white(style="background-color: #87CEFA;")
+					.col-6.border
+						img.css-img-neat(src="/media/img/together5.jpg" width="95%" height="200px")
+						div 程序工程师
+					.col-6.border
+						img.css-img-neat(src="/media/img/together6.jpg" width="95%" height="200px")
+						div 设计师
+					.col-4.border(style="height: 200px") 营销推广
+					.col-4.border(style="height: 200px") 法律
+					.col-4.border(style="height: 200px") 金融
+					.col-6.border(style="height: 200px") 数据科学
+					.col-6.border(style="height: 200px") 销售与咨询
+		div(style="height: 100px")
+	.js-browserWidth-mb

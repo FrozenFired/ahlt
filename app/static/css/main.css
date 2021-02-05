@@ -51,3 +51,11 @@ video.css-bg-video {
 	font-size: 20px;
 	line-height: 35px;
 }
+
+.css-roundedTopLeft-5 {
+	border-top-left-radius: 5rem !important;
+}
+
+.css-roundedTopRight-5 {
+	border-top-right-radius: 5rem !important;
+}

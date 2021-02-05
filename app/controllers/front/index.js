@@ -36,6 +36,13 @@ exports.invest = async(req, res) => {
 		return res.redirect('/error?info=invest,Error&error='+error)
 	}
 }
+exports.together = async(req, res) => {
+	try{
+		res.render('./front/together/detail', {title: "招贤纳士"})
+	} catch(error) {
+		return res.redirect('/error?info=together,Error&error='+error)
+	}
+}
 
 exports.navdb = async(req, res) => {
 	// console.log('/navdb:id');
