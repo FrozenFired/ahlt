@@ -34,14 +34,14 @@ video.css-bg-video {
 	background-color: #C0C0C0 !important;
 }
 .css-border-r {
-  border-right: 1px solid #C0C0C0 !important;
+	border-right: 1px solid #C0C0C0 !important;
 }
 .css-border-b {
-  border-bottom: 1px solid #C0C0C0 !important;
+	border-bottom: 1px solid #C0C0C0 !important;
 }
 .css-border-rb {
-  border-right: 1px solid #C0C0C0 !important;
-  border-bottom: 1px solid #C0C0C0 !important;
+	border-right: 1px solid #C0C0C0 !important;
+	border-bottom: 1px solid #C0C0C0 !important;
 }
 .css-text-sm {
 	font-size: 16px;
@@ -58,4 +58,36 @@ video.css-bg-video {
 
 .css-roundedTopRight-5 {
 	border-top-right-radius: 5rem !important;
+}
+
+
+
+.col-xxl-1, .col-xxl-2, .col-xxl-3, .col-xxl-4, .col-xxl-5, .col-xxl-6, .col-xxl-7, .col-xxl-8, .col-xxl-9, .col-xxl-10, .col-xxl-11, .col-xxl-12 {
+	position: relative; width: 100%; padding-right: 15px; padding-left: 15px; 
+}
+
+@media (min-width: 1460px) {
+	.col-xxl-1 {-ms-flex: 0 0 8.333333%; flex: 0 0 8.333333%; max-width: 8.333333%; }
+	.col-xxl-2 {-ms-flex: 0 0 16.666667%; flex: 0 0 16.666667%; max-width: 16.666667%; }
+	.col-xxl-3 {-ms-flex: 0 0 25%; flex: 0 0 25%; max-width: 25%; }
+	.col-xxl-4 {-ms-flex: 0 0 33.333333%; flex: 0 0 33.333333%; max-width: 33.333333%; }
+	.col-xxl-5 {-ms-flex: 0 0 41.666667%; flex: 0 0 41.666667%; max-width: 41.666667%; }
+	.col-xxl-6 {-ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%; }
+	.col-xxl-7 {-ms-flex: 0 0 58.333333%; flex: 0 0 58.333333%; max-width: 58.333333%; }
+	.col-xxl-8 {-ms-flex: 0 0 66.666667%; flex: 0 0 66.666667%; max-width: 66.666667%; }
+	.col-xxl-9 {-ms-flex: 0 0 75%; flex: 0 0 75%; max-width: 75%; }
+	.col-xxl-10 {-ms-flex: 0 0 83.333333%; flex: 0 0 83.333333%; max-width: 83.333333%; }
+	.col-xxl-11 {-ms-flex: 0 0 91.666667%; flex: 0 0 91.666667%; max-width: 91.666667%; }
+	.col-xxl-12 {-ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%; }
+}
+@media (min-width: 1460px) {
+	.d-xxl-none {display: none !important; }
+	.d-xxl-inline {display: inline !important; }
+	.d-xxl-inline-block {display: inline-block !important; }
+	.d-xxl-block {display: block !important; }
+	.d-xxl-table {display: table !important; }
+	.d-xxl-table-row {display: table-row !important; }
+	.d-xxl-table-cell {display: table-cell !important; }
+	.d-xxl-flex {display: -ms-flexbox !important; display: flex !important; }
+	.d-xxl-inline-flex {display: -ms-inline-flexbox !important; display: inline-flex !important; }
 }

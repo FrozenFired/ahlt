@@ -81,7 +81,7 @@ $(window).scroll(event => {
 const resizeWindow = () => {
 	// 根据浏览器宽度 显示电脑版或手机版
 	let minH = 0;
-	if($(window).width() > 1460) {
+	if($(window).width() >= 1024) {		// pad横屏
 		minH = 650;
 		$('.js-browserWidth-pc').show()
 		$('.js-browserWidth-mb').hide()

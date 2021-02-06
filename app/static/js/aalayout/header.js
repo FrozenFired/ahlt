@@ -196,8 +196,12 @@ const renderNavFirs_Func = async() => {
 		let elem = '';
 		for(let firNb=0; firNb<navdbFirs.length; firNb++) {
 			if(firNb == 4) break;
+			let browserWidthClass="col-lg-4 col-xxl-3";
+			if(firNb == 3) {
+				browserWidthClass="col-xxl-3 d-none d-xxl-block"
+			}
 			const navdbFir = navdbFirs[firNb];
-			elem += '<div class="col-3 rounded navFir navdbFirElem" data-id='+navdbFir._id+'>';
+			elem += '<div class="'+browserWidthClass+' rounded navFir navdbFirElem" data-id='+navdbFir._id+'>';
 				elem += '<a class="text-white" href="/navdb/'+navdbFir._id+'">'+navdbFir.cn+'</a>';
 			elem += '</div>';
 		}
