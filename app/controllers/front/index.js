@@ -78,6 +78,7 @@ exports.navdb = async(req, res) => {
 			}
 			// console.log(subsTable)
 		}
+		// console.log(navdb)
 		return res.render('./front/navdb/detail', {title: 'Holartec', navdb, subsTable});
 	} catch(error) {
 		return res.redirect('/error?info=navdb,Error&error='+error)

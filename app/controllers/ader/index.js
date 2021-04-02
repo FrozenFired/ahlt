@@ -25,7 +25,7 @@ exports.loginAder = async(req, res) => {
 		let ader = await Ader.findOne({code: code});
 		if(!ader) return res.redirect('/error?info=Adminnistrator Code 不正确, 请重新登陆');
 
-		const isMatch = bcrypt.compare(pwd, ader.pwd);
+		const isMatch = await bcrypt.compare(pwd, ader.pwd);
 		if(!isMatch) return res.redirect('/error?info=Adminnistrator Code 密码不符, 请重新登陆');
 
 		req.session.crAder = ader
